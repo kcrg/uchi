@@ -2,46 +2,28 @@ package eu.tryniecki.uchi
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.tv.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.Surface
+import eu.tryniecki.uchi.ui.home.HomeScreen
 import eu.tryniecki.uchi.ui.theme.UchiTheme
 
 class MainActivity : ComponentActivity() {
-    @OptIn(ExperimentalTvMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // A home screen must not close on BACK.
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() = Unit
+        })
         setContent {
             UchiTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    shape = RectangleShape
-                ) {
-                    Greeting("Android")
+                Surface(modifier = Modifier.fillMaxSize(), shape = RectangleShape) {
+                    HomeScreen()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    UchiTheme {
-        Greeting("Android")
     }
 }

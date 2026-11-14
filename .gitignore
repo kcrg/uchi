@@ -1,15 +1,22 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
+# Gradle / Kotlin
+.gradle/
+.kotlin/
+build/
 /captures
 .externalNativeBuild
 .cxx
+
+# Local machine config
 local.properties
+*.keystore
+*.jks
+keystore.properties
+
+# IDE
+*.iml
+.idea/
+.vscode/
+.DS_Store
+
+# Claude Code local settings
+.claude/settings.local.json

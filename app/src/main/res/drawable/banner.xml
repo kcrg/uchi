@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder TV banner (320x180dp). Replace with real artwork later. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <path
+        android:fillColor="@color/banner_background"
+        android:pathData="M0,0h320v180h-320z" />
+    <!-- Simple house mark ("uchi" = home). -->
+    <path
+        android:fillColor="@color/banner_accent"
+        android:pathData="M160,48 L208,88 L198,88 L198,132 L122,132 L122,88 L112,88 Z" />
+    <path
+        android:fillColor="@color/banner_background"
+        android:pathData="M150,104h20v28h-20z" />
+</vector>
