@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.Uchi" parent="Theme.AppCompat.DayNight.NoActionBar" />
+</resources>
